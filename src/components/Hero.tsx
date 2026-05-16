@@ -45,14 +45,14 @@ export default function Hero() {
 
   // Mobile: bottom=0 agar foto menempel ke bawah, tidak ngambang
   const portraitBottom = isLaptop ? "-10%" : "0%";
-  const portraitHeight = isLaptop ? "115%" : isMobile ? "92%" : "100%";
+  const portraitHeight = isLaptop ? "115%" : isMobile ? "80%" : "100%";
 
   return (
     <section
       id="hero"
       className="relative w-full overflow-hidden"
       style={{
-        minHeight: "100dvh",
+        minHeight: "100svh",
         background:
           "radial-gradient(ellipse 80% 90% at 50% 80%, #F0C060 0%, #F5D98A 15%, #FBF0C0 35%, #FDF8E8 55%, #FFFFFF 75%)",
       }}
@@ -94,7 +94,7 @@ export default function Hero() {
         className="relative mx-auto"
         style={{
           maxWidth: "1400px",
-          height: "calc(100dvh - 80px)",
+          height: "calc(100svh - 80px)",
           padding: "0 clamp(16px, 4vw, 60px)",
         }}
       >
@@ -102,7 +102,7 @@ export default function Hero() {
         <div
           className="absolute w-full left-0 right-0 z-20 text-center pointer-events-none select-none"
           style={{
-            top: isLaptop ? "10%" : isMobile ? "18%" : "12%",
+            top: isLaptop ? "10%" : isMobile ? "6%" : "12%",
             paddingLeft: "clamp(12px, 4vw, 48px)",
             paddingRight: "clamp(12px, 4vw, 48px)",
             ...fadeIn(0.1),
@@ -113,7 +113,7 @@ export default function Hero() {
             style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontStyle: "italic",
-              fontSize: "clamp(44px, 9.5vw, 126px)",
+              fontSize: isMobile ? "clamp(36px, 11vw, 52px)" : "clamp(44px, 9.5vw, 126px)",
               fontWeight: 300,
               color: "#1a1a1a",
               letterSpacing: "0.18em",
@@ -132,7 +132,7 @@ export default function Hero() {
             bottom: portraitBottom,
             width: portraitWidth,
             height: portraitHeight,
-            maxHeight: "calc(100dvh - 80px)",
+            maxHeight: "calc(100svh - 80px)",
           }}
         >
           <img

@@ -25,14 +25,24 @@ const tagIconMap: Record<string, React.ElementType> = {
   "Arduino IDE": SiArduino,
 };
 
-const projects = [
+// Semua proyek — urutan: 3 yang ditampilkan di halaman utama dulu
+const allProjects = [
   {
-    category: "Website Pribadi",
-    title: "Website Portfolio",
-    description: "Website portfolio pribadi yang dibangun dengan React dan Vite, menampilkan desain editorial yang bersih, tata letak responsif, dan pengalaman pengguna yang mulus.",
+    category: "Website Edukasi",
+    title: "Website Reformasi",
+    description: "Website edukasi interaktif yang menyajikan perjalanan Reformasi Indonesia dari 1998 hingga kini, dilengkapi data presiden, timeline, dan narasi sejarah yang mendalam.",
     tags: ["React", "TypeScript", "Vite", "TailwindCSS", "Firebase"],
-    image: "/project-portfolio.png",
-    link: "https://irsyadalharits.web.app/",
+    image: "/reformasi.jpeg",
+    link: "https://sejarah-reformasi.web.app",
+    comingSoon: false,
+  },
+  {
+    category: "Website Edukasi",
+    title: "Website Matika°",
+    description: "Website edukasi matematika interaktif yang menyajikan materi, latihan soal, dan pembahasan dengan tampilan modern dan ramah pengguna untuk pelajar.",
+    tags: ["React", "JavaScript", "Vite", "Firebase"],
+    image: "/matika.jpeg",
+    link: "https://matika-degree.web.app",
     comingSoon: false,
   },
   {
@@ -42,6 +52,15 @@ const projects = [
     tags: ["React", "JavaScript", "Vite", "Vercel"],
     image: "/cemal-cemil.png",
     link: "https://cemalcemil-six.vercel.app/",
+    comingSoon: false,
+  },
+  {
+    category: "Website Pribadi",
+    title: "Website Portfolio",
+    description: "Website portfolio pribadi yang dibangun dengan React dan Vite, menampilkan desain editorial yang bersih, tata letak responsif, dan pengalaman pengguna yang mulus.",
+    tags: ["React", "TypeScript", "Vite", "TailwindCSS", "Firebase"],
+    image: "/project-portfolio.png",
+    link: "https://irsyadalharits.web.app/",
     comingSoon: false,
   },
   {
@@ -62,25 +81,10 @@ const projects = [
     link: "https://risana-a86f6.web.app",
     comingSoon: false,
   },
-  {
-    category: "Website Edukasi",
-    title: "Website Reformasi",
-    description: "Website edukasi interaktif yang menyajikan perjalanan Reformasi Indonesia dari 1998 hingga kini, dilengkapi data presiden, timeline, dan narasi sejarah yang mendalam.",
-    tags: ["React", "TypeScript", "Vite", "TailwindCSS", "Firebase"],
-    image: "/reformasi.jpeg",
-    link: "https://sejarah-reformasi.web.app",
-    comingSoon: false,
-  },
-  {
-    category: "Website Edukasi",
-    title: "Website Matika°",
-    description: "Website edukasi matematika interaktif yang menyajikan materi, latihan soal, dan pembahasan dengan tampilan modern dan ramah pengguna untuk pelajar.",
-    tags: ["React", "JavaScript", "Vite", "Firebase"],
-    image: "/matika.jpeg",
-    link: "https://matika-degree.web.app",
-    comingSoon: false,
-  },
 ];
+
+// Hanya 3 pertama ditampilkan di halaman utama
+const projects = allProjects.slice(0, 3);
 
 function ProjectCard({
   project,

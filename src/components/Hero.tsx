@@ -270,9 +270,9 @@ export default function Hero() {
       <div
         className="absolute bottom-0 left-0 right-0 pointer-events-none"
         style={{
-          height: "160px",
-          zIndex: 50,
-          background: "linear-gradient(to bottom, transparent 0%, #FDFAF0 100%)",
+          height: "200px",
+          zIndex: 15,
+          background: "linear-gradient(to bottom, transparent 0%, rgba(253, 250, 240, 0.4) 40%, rgba(253, 250, 240, 0.8) 70%, #FDFAF0 100%)",
         }}
       />
     </section>

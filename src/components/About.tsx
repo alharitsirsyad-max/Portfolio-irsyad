@@ -48,7 +48,7 @@ export default function About() {
     <motion.section
       ref={ref}
       id="about"
-      className="py-20 md:py-32"
+      className="py-20 md:py-32 relative z-20"
       style={{
         background: "linear-gradient(to bottom, #FDFAF0 0%, #FDFAF2 20%, #FFFFFF 60%)",
       }}

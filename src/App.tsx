@@ -17,6 +17,7 @@ import Loader from "@/components/Loader";
 import CertificatesAll from "@/pages/CertificatesAll";
 import ProjectsAll from "@/pages/ProjectsAll";
 import NotFound from "@/pages/not-found";
+import { useVisitorTracking } from "@/hooks/useVisitorTracking";
 
 const queryClient = new QueryClient();
 
@@ -37,32 +38,39 @@ function HomePage() {
   );
 }
 
-function App() {
+function AppContent() {
   const [isLoading, setIsLoading] = useState(true);
+
+  useVisitorTracking();
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2000);
-
     return () => clearTimeout(timer);
   }, []);
 
   return (
+    <AnimatePresence mode="wait">
+      {isLoading ? (
+        <Loader key="loader" />
+      ) : (
+        <Switch key="content">
+          <Route path="/" component={HomePage} />
+          <Route path="/certificates" component={CertificatesAll} />
+          <Route path="/projects/all" component={ProjectsAll} />
+          <Route component={NotFound} />
+        </Switch>
+      )}
+    </AnimatePresence>
+  );
+}
+
+function App() {
+  return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <AnimatePresence mode="wait">
-          {isLoading ? (
-            <Loader key="loader" />
-          ) : (
-            <Switch key="content">
-              <Route path="/" component={HomePage} />
-              <Route path="/certificates" component={CertificatesAll} />
-              <Route path="/projects/all" component={ProjectsAll} />
-              <Route component={NotFound} />
-            </Switch>
-          )}
-        </AnimatePresence>
+        <AppContent />
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>

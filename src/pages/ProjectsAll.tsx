@@ -157,7 +157,7 @@ export default function ProjectsAll() {
               <motion.div
                 key={idx}
                 className={`group flex flex-col bg-card border border-border/50 rounded-xl overflow-hidden transition-all duration-300 ${
-                  project.comingSoon ? "opacity-70 cursor-default" : "hover:shadow-xl hover:-translate-y-1 cursor-pointer"
+                  project.comingSoon ? "opacity-70 cursor-default" : "hover:border-foreground hover:shadow-xl hover:-translate-y-1 cursor-pointer"
                 }`}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}

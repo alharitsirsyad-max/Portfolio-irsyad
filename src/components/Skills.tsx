@@ -62,7 +62,7 @@ function SkillCard({ skill, inView, index }: { skill: any, inView: boolean, inde
   
   return (
     <motion.div
-      className="group bg-white rounded-xl p-3 sm:p-6 border border-stone-300 hover:border-foreground/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+      className="group bg-white rounded-xl p-3 sm:p-6 border border-stone-300 hover:border-foreground hover:shadow-md transition-all duration-300 hover:-translate-y-1"
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.05 }}
